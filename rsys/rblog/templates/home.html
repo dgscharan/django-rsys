@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Posts</h1>
+{% for Post in object_list %}
+    <li>
+    <a href = "{% url 'article-details' Post.pk %}">
+    <b>{{Post.title}}</b> </a> Created_by <b>{{Post.author}}</b> -- <b>{{Post.author.email}}</b> Created_at <b>{{Post.publish_date}}</b>
+    <br>
+    {{Post.description}}
+    </li>
+
+
+{% endfor%}
+
+{% endblock %}
